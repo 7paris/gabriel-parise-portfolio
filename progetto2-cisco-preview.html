@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network Design Screenshot</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Style to center the page and give it a "lightbox" look */
+      body {
+        background-color: var(--primary-dark);
+        color: var(--text-light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 30px 0;
+        font-family: "Inter", sans-serif;
+      }
+      .lightbox-content-page {
+        background-color: var(--secondary-dark);
+        padding: 40px;
+        border-radius: 10px;
+        max-width: 90%;
+        width: 800px;
+        text-align: center;
+        box-shadow: 0 0 40px rgba(0, 188, 212, 0.8);
+      }
+      .cisco-image {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid var(--accent);
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lightbox-content-page">
+      <h2>Network Infrastructure: Cisco Packet Tracer</h2>
+      <p style="color: var(--text-muted)">
+        Topological design of a corporate network with inter-VLAN routing.
+      </p>
+
+      <img
+        src="packet.png"
+        alt="Screenshot of the network created with Cisco Packet Tracer"
+        class="cisco-image"
+      />
+
+      <a href="index.html" class="cta-button"> Return to Digital Profile </a>
+    </div>
+  </body>
+</html>

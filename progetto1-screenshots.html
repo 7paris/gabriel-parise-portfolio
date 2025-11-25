@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Screenshots: Gestionale Ordini</title>
+    <title>Screenshots: Order Management</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* Stile specifico per questa pagina, che usa elementi dal CSS principale */
+      /* Specific style for this page, which uses elements from the main CSS */
       body {
         background-color: var(--primary-dark);
         color: var(--text-light);
@@ -17,7 +17,7 @@
         margin: 0;
         padding: 30px 0;
         font-family: "Inter", sans-serif;
-        overflow-x: hidden; /* Per prevenire lo scroll orizzontale non desiderato su mobile */
+        overflow-x: hidden; /* To prevent unwanted horizontal scroll on mobile */
       }
 
       .lightbox-content-page {
@@ -25,21 +25,21 @@
         padding: 40px;
         border-radius: 10px;
         max-width: 90%;
-        width: 1000px; /* Larghezza maggiore per la galleria */
+        width: 1000px; /* Wider width for the gallery */
         text-align: center;
-        box-shadow: 0 0 40px rgba(0, 188, 212, 0.8); /* Ombra azzurra */
-        position: relative; /* Necessario per posizionare i pulsanti */
+        box-shadow: 0 0 40px rgba(0, 188, 212, 0.8); /* Blue shadow */
+        position: relative; /* Needed to position the buttons */
       }
 
-      /* Sovrascrivi lo stile della galleria nel contesto di questa pagina */
+      /* Override gallery style in the context of this page */
       .screenshot-gallery-modal {
-        height: 450px; /* Altezza maggiore */
+        height: 450px; /* Taller height */
         border: 2px solid var(--accent);
         margin-bottom: 30px;
-        position: relative; /* Per posizionare le frecce se fossero interne */
+        position: relative; /* For positioning arrows if they were internal */
 
-        /* Le proprietà di scorrimento (display: flex, overflow-x: scroll, ecc.)
-               sono già definite nel file style2.css sotto .screenshot-gallery-modal */
+        /* The scrolling properties (display: flex, overflow-x: scroll, etc.)
+                   are already defined in the style.css file under .screenshot-gallery-modal */
       }
 
       @media (max-width: 768px) {
@@ -54,31 +54,30 @@
   </head>
   <body>
     <div class="lightbox-content-page">
-      <h2>Screenshots: Gestione Ordini</h2>
+      <h2>Screenshots: Order Management</h2>
       <p style="color: var(--text-muted)">
-        Scorri orizzontalmente per vedere tutti i passaggi dell'applicazione o
-        usa le frecce.
+        Scroll horizontally to see all application steps or use the arrows.
       </p>
 
       <div class="screenshot-gallery-modal" id="galleryPage">
         <img
           src="Dashboard.png"
-          alt="Gestionale Ordini - Dashboard"
+          alt="Order Management - Dashboard"
           class="gallery-image-modal"
         />
         <img
           src="MAC.png"
-          alt="Gestionale Ordini - Pagina Ordini"
+          alt="Order Management - Orders Page"
           class="gallery-image-modal"
         />
         <img
           src="Utenti.png"
-          alt="Gestionale Ordini - Form Esportazione"
+          alt="Order Management - Export Form"
           class="gallery-image-modal"
         />
         <img
           src="Materiale.png"
-          alt="Gestionale Ordini - Report Finale"
+          alt="Order Management - Final Report"
           class="gallery-image-modal"
         />
       </div>
@@ -93,9 +92,7 @@
         &#10095;
       </button>
 
-      <a href="index.html" class="cta-button"
-        >Torna al Digital Profile</a
-      >
+      <a href="index.html" class="cta-button">Return to Digital Profile</a>
     </div>
 
     <script>
