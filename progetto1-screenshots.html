@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screenshots: Gestionale Ordini</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Stile specifico per questa pagina, che usa elementi dal CSS principale */
+      body {
+        background-color: var(--primary-dark);
+        color: var(--text-light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 30px 0;
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden; /* Per prevenire lo scroll orizzontale non desiderato su mobile */
+      }
+
+      .lightbox-content-page {
+        background-color: var(--secondary-dark);
+        padding: 40px;
+        border-radius: 10px;
+        max-width: 90%;
+        width: 1000px; /* Larghezza maggiore per la galleria */
+        text-align: center;
+        box-shadow: 0 0 40px rgba(0, 188, 212, 0.8); /* Ombra azzurra */
+        position: relative; /* Necessario per posizionare i pulsanti */
+      }
+
+      /* Sovrascrivi lo stile della galleria nel contesto di questa pagina */
+      .screenshot-gallery-modal {
+        height: 450px; /* Altezza maggiore */
+        border: 2px solid var(--accent);
+        margin-bottom: 30px;
+        position: relative; /* Per posizionare le frecce se fossero interne */
+
+        /* Le proprietà di scorrimento (display: flex, overflow-x: scroll, ecc.)
+               sono già definite nel file style2.css sotto .screenshot-gallery-modal */
+      }
+
+      @media (max-width: 768px) {
+        .screenshot-gallery-modal {
+          height: 300px;
+        }
+        .lightbox-content-page {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lightbox-content-page">
+      <h2>Screenshots: Gestione Ordini</h2>
+      <p style="color: var(--text-muted)">
+        Scorri orizzontalmente per vedere tutti i passaggi dell'applicazione o
+        usa le frecce.
+      </p>
+
+      <div class="screenshot-gallery-modal" id="galleryPage">
+        <img
+          src="Dashboard.png"
+          alt="Gestionale Ordini - Dashboard"
+          class="gallery-image-modal"
+        />
+        <img
+          src="MAC.png"
+          alt="Gestionale Ordini - Pagina Ordini"
+          class="gallery-image-modal"
+        />
+        <img
+          src="Utenti.png"
+          alt="Gestionale Ordini - Form Esportazione"
+          class="gallery-image-modal"
+        />
+        <img
+          src="Materiale.png"
+          alt="Gestionale Ordini - Report Finale"
+          class="gallery-image-modal"
+        />
+      </div>
+
+      <button
+        class="nav-button prev"
+        onclick="scrollGallery('galleryPage', -1)"
+      >
+        &#10094;
+      </button>
+      <button class="nav-button next" onclick="scrollGallery('galleryPage', 1)">
+        &#10095;
+      </button>
+
+      <a href="index.html" class="cta-button"
+        >Torna al Digital Profile</a
+      >
+    </div>
+
+    <script>
+      function scrollGallery(galleryId, direction) {
+        const gallery = document.getElementById(galleryId);
+        if (!gallery) return;
+
+        const scrollAmount = gallery.clientWidth;
+
+        gallery.scrollBy({
+          left: scrollAmount * direction,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>
