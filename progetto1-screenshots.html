@@ -1,112 +1,180 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Screenshots: Order Management</title>
+    <title>Screenshot: Gestione Ordini</title>
+    <link rel="icon" type="image/png" href="img/logo.jpeg" sizes="32x32" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* Specific style for this page, which uses elements from the main CSS */
       body {
-        background-color: var(--primary-dark);
-        color: var(--text-light);
+        background-color: var(--bg);
+        color: var(--ink);
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
         margin: 0;
-        padding: 30px 0;
-        font-family: "Inter", sans-serif;
-        overflow-x: hidden; /* To prevent unwanted horizontal scroll on mobile */
+        padding: 30px 15px;
       }
-
       .lightbox-content-page {
-        background-color: var(--secondary-dark);
+        background-color: var(--surface);
         padding: 40px;
-        border-radius: 10px;
-        max-width: 90%;
-        width: 1000px; /* Wider width for the gallery */
+        border-radius: var(--radius-l);
+        max-width: 1200px;
+        width: 95%;
         text-align: center;
-        box-shadow: 0 0 40px rgba(0, 188, 212, 0.8); /* Blue shadow */
-        position: relative; /* Needed to position the buttons */
+        box-shadow: var(--shadow-card-hover);
+        border: 1px solid var(--border);
       }
-
-      /* Override gallery style in the context of this page */
-      .screenshot-gallery-modal {
-        height: 450px; /* Taller height */
-        border: 2px solid var(--accent);
+      .gallery-container {
+        position: relative;
         margin-bottom: 30px;
-        position: relative; /* For positioning arrows if they were internal */
-
-        /* The scrolling properties (display: flex, overflow-x: scroll, etc.)
-                   are already defined in the style.css file under .screenshot-gallery-modal */
       }
-
+      .screenshot-gallery-modal {
+        height: 500px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-m);
+      }
+      .page-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
       @media (max-width: 768px) {
-        .screenshot-gallery-modal {
-          height: 300px;
-        }
         .lightbox-content-page {
           padding: 20px;
+        }
+        .screenshot-gallery-modal {
+          height: 250px;
+        }
+        .page-actions {
+          justify-content: center;
         }
       }
     </style>
   </head>
   <body>
     <div class="lightbox-content-page">
-      <h2>Screenshots: Order Management</h2>
-      <p style="color: var(--text-muted)">
-        Scroll horizontally to see all application steps or use the arrows.
+      <h2 data-lang-key="title">Screenshot: Gestione Ordini</h2>
+      <p data-lang-key="instructions">
+        Scorri orizzontalmente o usa le frecce per vedere tutti i passaggi
+        dell'applicazione.
       </p>
 
-      <div class="screenshot-gallery-modal" id="galleryPage">
-        <img
-          src="Dashboard.png"
-          alt="Order Management - Dashboard"
-          class="gallery-image-modal"
-        />
-        <img
-          src="MAC.png"
-          alt="Order Management - Orders Page"
-          class="gallery-image-modal"
-        />
-        <img
-          src="Utenti.png"
-          alt="Order Management - Export Form"
-          class="gallery-image-modal"
-        />
-        <img
-          src="Materiale.png"
-          alt="Order Management - Final Report"
-          class="gallery-image-modal"
-        />
+      <div class="gallery-container">
+        <div class="screenshot-gallery-modal" id="galleryPage">
+          <img
+            src="img/Dashboard.png"
+            data-lang-alt="alt_dashboard"
+            alt="Gestione Ordini - Dashboard"
+            class="gallery-image-modal"
+          />
+          <img
+            src="img/MAC.png"
+            data-lang-alt="alt_orders"
+            alt="Gestione Ordini - Pagina Ordini"
+            class="gallery-image-modal"
+          />
+          <img
+            src="img/Utenti.png"
+            data-lang-alt="alt_export"
+            alt="Gestione Ordini - Form Esportazione"
+            class="gallery-image-modal"
+          />
+          <img
+            src="img/Materiale.png"
+            data-lang-alt="alt_report"
+            alt="Gestione Ordini - Report Finale"
+            class="gallery-image-modal"
+          />
+        </div>
+        <button
+          class="nav-button prev"
+          onclick="scrollGallery('galleryPage', -1)"
+        >
+          &#10094;
+        </button>
+        <button
+          class="nav-button next"
+          onclick="scrollGallery('galleryPage', 1)"
+        >
+          &#10095;
+        </button>
       </div>
 
-      <button
-        class="nav-button prev"
-        onclick="scrollGallery('galleryPage', -1)"
-      >
-        &#10094;
-      </button>
-      <button class="nav-button next" onclick="scrollGallery('galleryPage', 1)">
-        &#10095;
-      </button>
-
-      <a href="index.html" class="cta-button">Return to Digital Profile</a>
+      <div class="page-actions">
+        <a href="index.html" class="cta-button" data-lang-key="return_button"
+          >Torna al Profilo Digitale</a
+        >
+        <button id="lang-switcher" class="lang-button">ENG</button>
+      </div>
     </div>
 
     <script>
       function scrollGallery(galleryId, direction) {
         const gallery = document.getElementById(galleryId);
         if (!gallery) return;
-
         const scrollAmount = gallery.clientWidth;
-
         gallery.scrollBy({
           left: scrollAmount * direction,
           behavior: "smooth",
         });
       }
+
+      const translations = {
+        it: {
+          title: "Screenshot: Gestione Ordini",
+          instructions:
+            "Scorri orizzontalmente o usa le frecce per vedere tutti i passaggi dell'applicazione.",
+          return_button: "Torna al Profilo Digitale",
+          alt_dashboard: "Gestione Ordini - Dashboard",
+          alt_orders: "Gestione Ordini - Pagina Ordini",
+          alt_export: "Gestione Ordini - Form Esportazione",
+          alt_report: "Gestione Ordini - Report Finale",
+        },
+        en: {
+          title: "Screenshots: Order Management",
+          instructions:
+            "Scroll horizontally to see all application steps or use the arrows.",
+          return_button: "Return to Digital Profile",
+          alt_dashboard: "Order Management - Dashboard",
+          alt_orders: "Order Management - Orders Page",
+          alt_export: "Order Management - Export Form",
+          alt_report: "Order Management - Final Report",
+        },
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const langSwitcher = document.getElementById("lang-switcher");
+        let currentLang = document.documentElement.lang || "it";
+
+        function setLanguage(lang) {
+          document.documentElement.lang = lang;
+          langSwitcher.textContent = lang === "it" ? "ENG" : "ITA";
+          document.querySelectorAll("[data-lang-key]").forEach((el) => {
+            const key = el.getAttribute("data-lang-key");
+            if (translations[lang][key]) el.innerHTML = translations[lang][key];
+          });
+          document.querySelectorAll("[data-lang-alt]").forEach((el) => {
+            const key = el.getAttribute("data-lang-alt");
+            if (translations[lang][key]) el.alt = translations[lang][key];
+          });
+        }
+
+        langSwitcher.addEventListener("click", () => {
+          currentLang = currentLang === "it" ? "en" : "it";
+          setLanguage(currentLang);
+        });
+        setLanguage(currentLang);
+      });
     </script>
   </body>
 </html>

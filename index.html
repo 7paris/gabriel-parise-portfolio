@@ -1,156 +1,239 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gabriel Parise Digital Profile</title>
-    <link rel="icon" type="image/png" href="logo.jpeg" sizes="32x32" />
+    <title>Gabriel Parise — Sviluppatore e diplomato in Informatica</title>
+    <link rel="icon" type="image/png" href="img/logo.jpeg" sizes="32x32" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/scrollreveal"></script>
   </head>
   <body>
     <header>
-      <div class="container">
-        <h1>Gabriel Parise</h1>
+      <div class="container header-inner">
+        <a href="#hero" class="brand">Gabriel Parise</a>
         <nav>
           <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" data-lang-key="nav_about">Chi sono</a></li>
+            <li><a href="#education" data-lang-key="nav_path">Percorso</a></li>
+            <li><a href="#portfolio" data-lang-key="nav_work">Lavori</a></li>
+            <li><a href="#contact" data-lang-key="nav_contact">Contatti</a></li>
+            <li>
+              <button id="lang-switcher" class="lang-button">ENG</button>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
 
     <section id="hero" class="hero">
-      <div class="container">
+      <div class="container hero-grid">
         <div class="hero-content">
-          <img
-            src=""
-            class="profile-pic"
-            alt="Gabriel Parise Profile Picture"
-          />
-          <h2>Hello! I'm Gabriel Parise.</h2>
-          <p>
-            Passionate about technology, web development, and systems
-            engineering.
+          <p class="eyebrow-line" data-lang-key="hero_eyebrow">
+            DIPLOMATO IN INFORMATICA · ITIS E. FERMI
           </p>
-          <div class="contact-links">
-            <a
-              href="https://github.com/7paris"
-              target="_blank"
-              class="social-link"
-              >GitHub</a
+          <h1 data-lang-key="hero_title">
+            Costruisco sistemi solidi, pronti per l'uso reale.
+          </h1>
+          <p class="hero-lead" data-lang-key="hero_lead">
+            18 anni, vivo in Italia. Lavoro su tutto lo stack —
+            dall'infrastruttura di rete alla logica di backend, fino
+            all'interfaccia utente — con l'obiettivo di perfezionare ogni
+            livello.
+          </p>
+          <div class="hero-actions">
+            <!-- Bottone Contattami -->
+            <a href="#contact" class="cta-button" data-lang-key="hero_cta"
+              >Contattami</a
             >
+            <!-- NUOVO Bottone Scarica CV -->
             <a
-              href="https://www.instagram.com/gabriel.parise_/"
-              target="_blank"
-              class="social-link"
-              >Instagram</a
+              href="Gabriel_Parise_CV.pdf"
+              download
+              class="cta-button cv-button"
+              data-lang-key="hero_cv"
+              >Scarica CV</a
             >
+
+            <div class="contact-links">
+              <a
+                href="https://github.com/7paris"
+                target="_blank"
+                class="social-link"
+                >GitHub</a
+              >
+              <a
+                href="https://www.instagram.com/gabriel.parise_/"
+                target="_blank"
+                class="social-link"
+                >Instagram</a
+              >
+            </div>
           </div>
-          <a href="#contact" class="cta-button"
-            >Contact Me for Collaborations</a
-          >
+        </div>
+
+        <div class="hero-visual" id="heroVisual" aria-hidden="true">
+          <div class="stack-scene" id="stackScene">
+            <div class="stack-layer layer-network">
+              <span class="layer-label">Network</span>
+              <span class="layer-detail">CISCO · VLAN · Routing</span>
+            </div>
+            <div class="stack-layer layer-database">
+              <span class="layer-label">Database</span>
+              <span class="layer-detail">SQL · Schema design</span>
+            </div>
+            <div class="stack-layer layer-backend">
+              <span class="layer-label">Backend</span>
+              <span class="layer-detail">Python · Django</span>
+            </div>
+            <div class="stack-layer layer-frontend">
+              <span class="layer-label">Frontend</span>
+              <span class="layer-detail">HTML · CSS · JS</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="about" class="about">
-      <div class="container">
-        <h2>About Me: My Digital Journey</h2>
+      <div class="container about-grid">
         <div class="about-text">
-          <p>
-            I am <strong>Gabriel Parise and I am 18 years old</strong>, I'm an
-            Informatics student deeply passionate about technology and
-            specializing in complex problem-solving. Since my very first line of
-            code, I have been fascinated by the code's ability to transform
-            abstract ideas into tangible and perfectly functional digital
-            solutions. My main mission is to create user experiences that are as
-            intuitive as they are efficient, dedicating equal attention to both
-            a robust backend and an elegant interface.
+          <h2 data-lang-key="about_title">Chi sono</h2>
+          <p data-lang-key="about_p1">
+            Sono <strong>Gabriel Parise</strong>, un neodiplomato in Informatica
+            con una profonda passione per la tecnologia e una specializzazione
+            nella risoluzione di problemi complessi. Dalla mia prima riga di
+            codice, sono rimasto affascinato dalla capacità della programmazione
+            di trasformare idee astratte in soluzioni digitali tangibili e
+            funzionali. La mia missione è costruire esperienze utente che siano
+            tanto intuitive quanto efficienti, dedicando la stessa attenzione a
+            un backend robusto e a un'interfaccia elegante.
           </p>
-
-          <p>
-            Throughout my academic career, I have acquired and consolidated
-            solid skills in <strong>C, C++, Java, and Python</strong>, focusing
-            on
+          <p data-lang-key="about_p2">
+            Durante il mio percorso accademico, ho consolidato competenze in
+            <strong>C, C++, Java e Python</strong>, con un focus sullo
             <strong
-              >web development and optimized SQL database management</strong
-            >. I have further enhanced my profile by completing two official
-            <strong>CISCO</strong> certification courses and obtaining
-            certificates in courses dedicated to workplace safety. My approach
-            to work is rigorous and methodical: I apply agile principles for
-            rapid iteration and firmly believe in the importance of clean code
-            and rigorous testing to ensure the scalability and reliability of
-            the final product.
+              >sviluppo web e sulla gestione ottimizzata di database SQL</strong
+            >. Ho arricchito la mia formazione con due corsi ufficiali di
+            certificazione <strong>CISCO</strong> e attestati sulla sicurezza
+            nel lavoro. Il mio approccio è rigoroso e metodico: applico i
+            principi Agile per un'iterazione rapida e credo che un codice pulito
+            e ben testato sia il fondamento di qualsiasi sistema scalabile.
           </p>
-
-          <p>
-            My career goal is to join a dynamic and innovative team where I can
-            actively contribute to the design and implementation of critical
-            systems. I bring with me not only essential technical skills, but
-            also a strong work ethic and a marked ability to effectively
-            communicate complex concepts to a non-technical audience. I am
-            seeking an opportunity that allows me to constantly grow as a
-            developer and leave a measurable impact on the success and
-            innovation of the project.
+          <p data-lang-key="about_p3">
+            Il mio obiettivo è entrare a far parte di un team dinamico e
+            innovativo, dove possa contribuire direttamente alla progettazione e
+            all'implementazione di sistemi critici, portando competenza tecnica,
+            etica del lavoro e la capacità di spiegare concetti complessi in
+            modo chiaro.
           </p>
         </div>
+
+        <aside class="about-facts">
+          <div class="fact">
+            <span class="fact-number">18</span>
+            <span class="fact-label" data-lang-key="fact_age">Anni</span>
+          </div>
+          <div class="fact">
+            <span class="fact-number">7.0</span>
+            <span class="fact-label" data-lang-key="fact_grade"
+              >Media scolastica, materie d'indirizzo</span
+            >
+          </div>
+          <div class="fact">
+            <span class="fact-number">4</span>
+            <span class="fact-label" data-lang-key="fact_languages"
+              >Linguaggi — C, C++, Java, Python</span
+            >
+          </div>
+          <div class="fact">
+            <span class="fact-number">2</span>
+            <span class="fact-label" data-lang-key="fact_certs"
+              >Certificazioni CISCO</span
+            >
+          </div>
+        </aside>
       </div>
     </section>
 
     <section id="education" class="education">
       <div class="container">
-        <h2>Educational and Professional Path</h2>
+        <h2 data-lang-key="education_title">
+          Percorso Formativo e Professionale
+        </h2>
 
-        <div class="section-block">
-          <h3>Education</h3>
-          <div class="entry">
-            <h4>ITIS E.FERMI</h4>
-            <p class="meta">
-              5th year of Technical Institute, Informatics major
-            </p>
-            <ul>
-              <li>
-                Maintained an average grade of <strong>7</strong> in fundamental
-                subjects.
-              </li>
-              <li>Development of Infrastructure Networks</li>
-              <li>
-                Proficiency in using <strong>CISCO Packet Tracer</strong> for
-                network simulation and design.
-              </li>
-              <li>
-                Advanced algorithms and data structures (Implementation in
-                Python, C, C++, and Java).
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="section-block">
-          <h3>Experience & Key Projects</h3>
-
-          <div class="entry">
-            <h4>Major Project: "Data Management" Web App</h4>
-            <p class="meta">School-Work Alternation Experience (PCTO)</p>
-            <p>
-              Developed an order management prototype using
-              <strong>Django</strong>, optimizing the order priority algorithm,
-              complete with monthly or selected-date Excel export, thus reducing
-              scheduling and organizational conflicts.
-            </p>
+        <div class="timeline">
+          <div class="timeline-item spotlight-effect">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <span class="timeline-tag" data-lang-key="tag_education"
+                >Formazione</span
+              >
+              <h3>ITIS E. Fermi</h3>
+              <p class="meta" data-lang-key="education_meta1">
+                Diploma di Perito Tecnico — Specializzazione Informatica
+              </p>
+              <ul>
+                <li data-lang-key="education_li1">
+                  Mantenuta una media del <strong>7</strong> nelle materie
+                  d'indirizzo
+                </li>
+                <li data-lang-key="education_li2">
+                  Sviluppo di infrastrutture di rete complesse
+                </li>
+                <li data-lang-key="education_li3">
+                  Utilizzo avanzato di <strong>CISCO Packet Tracer</strong> per
+                  la simulazione e progettazione di reti
+                </li>
+                <li data-lang-key="education_li4">
+                  Algoritmi e strutture dati in Python, C, C++ e Java
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div class="entry">
-            <h4>Project Lead</h4>
-            <p class="meta">Eros Bruno</p>
-            <p>
-              I was mentored by Eros Bruno in creating the site due to issues
-              with the Excel page which presented various blockages during the
-              day.
-            </p>
+          <div class="timeline-item spotlight-effect">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <span class="timeline-tag" data-lang-key="tag_project"
+                >Progetto</span
+              >
+              <h3 data-lang-key="project_title1">Web App "Gestione Dati"</h3>
+              <p class="meta" data-lang-key="project_meta1">
+                Esperienza di Alternanza Scuola-Lavoro (PCTO)
+              </p>
+              <p data-lang-key="project_p1">
+                Sviluppo di un prototipo per la gestione di ordini tramite
+                <strong>Django</strong>. Ho ottimizzato l'algoritmo di priorità
+                degli ordini e aggiunto una funzione di esportazione dati in
+                Excel (mensile o per data), riducendo i conflitti di
+                pianificazione.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item spotlight-effect">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <span class="timeline-tag" data-lang-key="tag_mentorship"
+                >Mentorship</span
+              >
+              <h3 data-lang-key="mentorship_title">
+                Project Lead — con Eros Bruno
+              </h3>
+              <p class="meta">Eros Bruno</p>
+              <p data-lang-key="mentorship_p1">
+                Guidato da Eros Bruno nella costruzione della piattaforma, in
+                risposta ai blocchi operativi ricorrenti nel flusso di lavoro
+                del team, basato su Excel.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -158,112 +241,371 @@
 
     <section id="portfolio" class="portfolio">
       <div class="container">
-        <h2>Skills and Work</h2>
+        <h2 data-lang-key="portfolio_title">Competenze e Lavori</h2>
 
         <div class="skills-grid">
-          <div class="skill-category">
-            <h3>Hard Skills</h3>
-            <ul>
-              <li>C, C++, Python, Java</li>
-              <li>SQL, HTML, CSS, Django</li>
-              <li>Git/GitHub, Networking (CISCO)</li>
-            </ul>
+          <div class="skill-category spotlight-effect">
+            <h3 data-lang-key="skills_hard">Hard skills</h3>
+            <div class="tag-list">
+              <span class="tag">C</span>
+              <span class="tag">C++</span>
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">SQL</span>
+              <span class="tag">HTML / CSS</span>
+              <span class="tag">Django</span>
+              <span class="tag">Git / GitHub</span>
+              <span class="tag">Networking (CISCO)</span>
+            </div>
           </div>
-          <div class="skill-category">
-            <h3>Soft Skills</h3>
-            <ul>
-              <li>Critical Problem Solving</li>
-              <li>Technical Communication</li>
-              <li>Teamwork (Agile)</li>
-              <li>Time Management</li>
-            </ul>
+          <div class="skill-category spotlight-effect">
+            <h3 data-lang-key="skills_soft">Soft skills</h3>
+            <div class="tag-list">
+              <span class="tag" data-lang-key="soft_skill1"
+                >Problem solving critico</span
+              >
+              <span class="tag" data-lang-key="soft_skill2"
+                >Comunicazione tecnica</span
+              >
+              <span class="tag" data-lang-key="soft_skill3"
+                >Lavoro di squadra (Agile)</span
+              >
+              <span class="tag" data-lang-key="soft_skill4"
+                >Gestione del tempo</span
+              >
+            </div>
           </div>
         </div>
 
         <div class="project-grid">
-          <div class="project-card">
-            <h3>Portfolio Project 1: Order Management</h3>
-            <p>
-              <strong>Dynamic web application</strong> integrating a robust
-              backend (Django/Python) and real-time data management. The project
-              demonstrates my ability to design backend architectures and
-              optimize business workflows.
+          <article class="project-card spotlight-effect">
+            <span class="project-index" data-lang-key="project_index1"
+              >Gestione Ordini</span
+            >
+            <h3 data-lang-key="project_card_title1">
+              Progetto di Portfolio: Gestione Ordini
+            </h3>
+            <p data-lang-key="project_card_p1">
+              Una <strong>web application dinamica</strong> che integra un
+              backend robusto (Django/Python) con la gestione dei dati in tempo
+              reale. Dimostra la mia abilità nel progettare architetture backend
+              e ottimizzare i flussi di lavoro aziendali.
             </p>
-            <a href="progetto1-screenshots.html" class="lightbox-trigger">
-              View Screenshot Preview
+            <a
+              href="progetto1-screenshots.html"
+              class="lightbox-trigger"
+              data-lang-key="project_card_cta1"
+            >
+              Vedi anteprima screenshot →
             </a>
-          </div>
-
-          <div class="project-card">
-            <h3>Portfolio Project 2: Network Infrastructure Design</h3>
-            <p>
-              Design and implementation of a complex multi-layer network using
-              <strong>CISCO Packet Tracer</strong>. The project includes VLAN
-              configuration, routing protocols, and security hardening,
-              showcasing proficiency in
-              <strong>network administration</strong> and
-              <strong>protocol analysis</strong>.
-            </p>
-            <a href="progetto2-cisco-preview.html" class="lightbox-trigger">
-              View Network Diagram
-            </a>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="contact" class="contact">
       <div class="container">
-        <h2>Contact Me</h2>
-        <p>
-          If you have a project or just want to say hello, feel free to write!
-        </p>
-        <form
-          id="contactForm"
-          action="https://formspree.io/f/mnnyopob"
-          method="POST"
-        >
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            required
-          ></textarea>
-          <button type="submit" class="cta-button">Send Message</button>
-        </form>
+        <div class="contact-card">
+          <h2 data-lang-key="contact_title">Contattami</h2>
+          <p data-lang-key="contact_p">
+            Se hai un progetto in mente o vuoi semplicemente salutarmi, non
+            esitare a scrivermi.
+          </p>
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/mnnyopob"
+            method="POST"
+          >
+            <input type="hidden" name="_next" value="grazie.html" />
+
+            <input
+              type="text"
+              name="name"
+              data-lang-placeholder="placeholder_name"
+              placeholder="Il tuo nome"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              data-lang-placeholder="placeholder_email"
+              placeholder="La tua email"
+              required
+            />
+            <textarea
+              name="message"
+              data-lang-placeholder="placeholder_message"
+              placeholder="Il tuo messaggio"
+              rows="3"
+              required
+            ></textarea>
+            <button
+              type="submit"
+              class="cta-button"
+              data-lang-key="contact_button"
+            >
+              Invia messaggio
+            </button>
+          </form>
+        </div>
       </div>
     </section>
 
     <footer>
       <div class="container">
         <p>
-          &copy; 2025 Gabriel Parise. Digital Profile. |
-          <a href="#contact">Contact Me</a>
+          &copy; 2026 Gabriel Parise. Profilo Digitale. |
+          <a href="#contact" data-lang-key="footer_contact">Contattami</a>
         </p>
       </div>
     </footer>
 
+    <a href="#hero" id="back-to-top" class="back-to-top-btn">&#8679;</a>
+
     <script>
+      const translations = {
+        it: {
+          nav_about: "Chi sono",
+          nav_path: "Percorso",
+          nav_work: "Lavori",
+          nav_contact: "Contatti",
+          hero_eyebrow: "DIPLOMATO IN INFORMATICA · ITIS E. FERMI",
+          hero_title: "Costruisco sistemi solidi, pronti per l'uso reale.",
+          hero_lead:
+            "18 anni, vivo in Italia. Lavoro su tutto lo stack — dall'infrastruttura di rete alla logica di backend, fino all'interfaccia utente — con l'obiettivo di perfezionare ogni livello.",
+          hero_cta: "Contattami",
+          hero_cv: "Scarica CV" /* NUOVO */,
+          about_title: "Chi sono",
+          about_p1:
+            "Sono <strong>Gabriel Parise</strong>, un neodiplomato in Informatica con una profonda passione per la tecnologia e una specializzazione nella risoluzione di problemi complessi. Dalla mia prima riga di codice, sono rimasto affascinato dalla capacità della programmazione di trasformare idee astratte in soluzioni digitali tangibili e funzionali. La mia missione è costruire esperienze utente che siano tanto intuitive quanto efficienti, dedicando la stessa attenzione a un backend robusto e a un'interfaccia elegante.",
+          about_p2:
+            "Durante il mio percorso accademico, ho consolidato competenze in <strong>C, C++, Java e Python</strong>, con un focus sullo <strong>sviluppo web e sulla gestione ottimizzata di database SQL</strong>. Ho arricchito la mia formazione con due corsi ufficiali di certificazione <strong>CISCO</strong> e attestati sulla sicurezza nel lavoro. Il mio approccio è rigoroso e metodico: applico i principi Agile per un'iterazione rapida e credo che un codice pulito e ben testato sia il fondamento di qualsiasi sistema scalabile.",
+          about_p3:
+            "Il mio obiettivo è entrare a far parte di un team dinamico e innovativo, dove possa contribuire direttamente alla progettazione e all'implementazione di sistemi critici, portando competenza tecnica, etica del lavoro e la capacità di spiegare concetti complessi in modo chiaro.",
+          fact_age: "Anni",
+          fact_grade: "Media scolastica, materie d'indirizzo",
+          fact_languages: "Linguaggi — C, C++, Java, Python",
+          fact_certs: "Certificazioni CISCO",
+          education_title: "Percorso Formativo e Professionale",
+          tag_education: "Formazione",
+          education_meta1:
+            "Diploma di Perito Tecnico — Specializzazione Informatica",
+          education_li1:
+            "Mantenuta una media del <strong>7</strong> nelle materie d'indirizzo",
+          education_li2: "Sviluppo di infrastrutture di rete complesse",
+          education_li3:
+            "Utilizzo avanzato di <strong>CISCO Packet Tracer</strong> per la simulazione e progettazione di reti",
+          education_li4: "Algoritmi e strutture dati in Python, C, C++ e Java",
+          tag_project: "Progetto",
+          project_title1: 'Web App "Gestione Dati"',
+          project_meta1: "Esperienza di Alternanza Scuola-Lavoro (PCTO)",
+          project_p1:
+            "Sviluppo di un prototipo per la gestione di ordini tramite <strong>Django</strong>. Ho ottimizzato l'algoritmo di priorità degli ordini e aggiunto una funzione di esportazione dati in Excel (mensile o per data), riducendo i conflitti di pianificazione.",
+          tag_mentorship: "Mentorship",
+          mentorship_title: "Project Lead — con Eros Bruno",
+          mentorship_p1:
+            "Guidato da Eros Bruno nella costruzione della piattaforma, in risposta ai blocchi operativi ricorrenti nel flusso di lavoro del team, basato su Excel.",
+          portfolio_title: "Competenze e Lavori",
+          skills_hard: "Hard skills",
+          skills_soft: "Soft skills",
+          soft_skill1: "Problem solving critico",
+          soft_skill2: "Comunicazione tecnica",
+          soft_skill3: "Lavoro di squadra (Agile)",
+          soft_skill4: "Gestione del tempo",
+          project_index1: "Gestione Ordini",
+          project_card_title1: "Progetto di Portfolio: Gestione Ordini",
+          project_card_p1:
+            "Una <strong>web application dinamica</strong> che integra un backend robusto (Django/Python) con la gestione dei dati in tempo reale. Dimostra la mia abilità nel progettare architetture backend e ottimizzare i flussi di lavoro aziendali.",
+          project_card_cta1: "Vedi anteprima screenshot →",
+          contact_title: "Contattami",
+          contact_p:
+            "Se hai un progetto in mente o vuoi semplicemente salutarmi, non esitare a scrivermi.",
+          placeholder_name: "Il tuo nome",
+          placeholder_email: "La tua email",
+          placeholder_message: "Il tuo messaggio",
+          contact_button: "Invia messaggio",
+          footer_contact: "Contattami",
+        },
+        en: {
+          nav_about: "About",
+          nav_path: "Path",
+          nav_work: "Work",
+          nav_contact: "Contact",
+          hero_eyebrow: "INFORMATICS GRADUATE · ITIS E. FERMI",
+          hero_title: "I build systems that hold up under real use.",
+          hero_lead:
+            "18 years old, based in Italy. I work across the whole stack — from network infrastructure to backend logic to the interface people actually touch — and I care about getting each layer right.",
+          hero_cta: "Get in touch",
+          hero_cv: "Download CV" /* NUOVO */,
+          about_title: "About",
+          about_p1:
+            "I'm <strong>Gabriel Parise</strong>, an Informatics graduate deeply passionate about technology and specializing in complex problem-solving. Since my very first line of code, I've been fascinated by code's ability to transform abstract ideas into tangible, functional digital solutions. My mission is to build user experiences that are as intuitive as they are efficient — giving equal attention to a robust backend and an elegant interface.",
+          about_p2:
+            "Throughout my academic career I've built solid skills in <strong>C, C++, Java, and Python</strong>, with a focus on <strong>web development and optimized SQL database management</strong>. I've reinforced this with two official <strong>CISCO</strong> certification courses and certificates in workplace safety training. My approach is rigorous and methodical: I apply agile principles for rapid iteration and believe in clean, well-tested code as the foundation of anything that needs to scale.",
+          about_p3:
+            "My goal is to join a dynamic, innovative team where I can contribute directly to the design and implementation of critical systems — bringing technical skill, a strong work ethic, and the ability to explain complex ideas to non-technical people.",
+          fact_age: "Years old",
+          fact_grade: "Average grade, core subjects",
+          fact_languages: "Languages — C, C++, Java, Python",
+          fact_certs: "CISCO certifications",
+          education_title: "Educational and Professional Path",
+          tag_education: "Education",
+          education_meta1: "Technical Institute Diploma — Informatics Major",
+          education_li1:
+            "Maintained an average grade of <strong>7</strong> in core subjects",
+          education_li2: "Development of complex network infrastructures",
+          education_li3:
+            "Proficient with <strong>CISCO Packet Tracer</strong> for network simulation and design",
+          education_li4:
+            "Advanced algorithms and data structures in Python, C, C++, and Java",
+          tag_project: "Project",
+          project_title1: '"Data Management" Web App',
+          project_meta1: "School-Work Alternation Experience (PCTO)",
+          project_p1:
+            "Developed an order-management prototype using <strong>Django</strong>, optimizing the order-priority algorithm and adding monthly or selected-date Excel export — reducing scheduling and organizational conflicts.",
+          tag_mentorship: "Mentorship",
+          mentorship_title: "Project Lead — with Eros Bruno",
+          mentorship_p1:
+            "Mentored by Eros Bruno in building the platform, in response to recurring blockages in the team's existing Excel-based workflow.",
+          portfolio_title: "Skills and Work",
+          skills_hard: "Hard skills",
+          skills_soft: "Soft skills",
+          soft_skill1: "Critical problem solving",
+          soft_skill2: "Technical communication",
+          soft_skill3: "Teamwork (Agile)",
+          soft_skill4: "Time management",
+          project_index1: "Order Management",
+          project_card_title1: "Portfolio Project: Order Management",
+          project_card_p1:
+            "A <strong>dynamic web application</strong> integrating a robust backend (Django/Python) with real-time data management. Demonstrates my ability to design backend architectures and optimize business workflows.",
+          project_card_cta1: "View screenshot preview →",
+          contact_title: "Contact me",
+          contact_p:
+            "If you have a project or just want to say hello, feel free to write.",
+          placeholder_name: "Your name",
+          placeholder_email: "Your email",
+          placeholder_message: "Your message",
+          contact_button: "Send message",
+          footer_contact: "Contact Me",
+        },
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const langSwitcher = document.getElementById("lang-switcher");
+        let currentLang = "it";
+
+        function setLanguage(lang) {
+          document.documentElement.lang = lang;
+          langSwitcher.textContent = lang === "it" ? "ENG" : "ITA";
+          document.querySelectorAll("[data-lang-key]").forEach((element) => {
+            const key = element.getAttribute("data-lang-key");
+            if (translations[lang][key])
+              element.innerHTML = translations[lang][key];
+          });
+          document
+            .querySelectorAll("[data-lang-placeholder]")
+            .forEach((element) => {
+              const key = element.getAttribute("data-lang-placeholder");
+              if (translations[lang][key])
+                element.placeholder = translations[lang][key];
+            });
+        }
+
+        langSwitcher.addEventListener("click", () => {
+          currentLang = currentLang === "it" ? "en" : "it";
+          setLanguage(currentLang);
+        });
+
+        setLanguage(currentLang);
+
+        const textarea = document.querySelector('textarea[name="message"]');
+        if (textarea) {
+          textarea.addEventListener("input", () => {
+            textarea.style.height = "auto";
+            textarea.style.height = `${textarea.scrollHeight}px`;
+          });
+        }
+
+        const backToTopButton = document.getElementById("back-to-top");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTopButton.classList.add("visible");
+          } else {
+            backToTopButton.classList.remove("visible");
+          }
+        });
+
+        const spotlightElements =
+          document.querySelectorAll(".spotlight-effect");
+        spotlightElements.forEach((el) => {
+          el.addEventListener("mousemove", (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            el.style.setProperty("--mouse-x", `${x}px`);
+            el.style.setProperty("--mouse-y", `${y}px`);
+          });
+        });
+      });
+
+      ScrollReveal({
+        distance: "60px",
+        duration: 2000,
+        delay: 300,
+        reset: false,
+      });
+      ScrollReveal().reveal(".hero-content, .about-text, .timeline", {
+        origin: "left",
+      });
+      ScrollReveal().reveal(
+        ".hero-visual, .about-facts, .skills-grid, .project-grid, .contact-card",
+        { origin: "right" },
+      );
+      ScrollReveal().reveal("h2", { origin: "top" });
+
       document
         .getElementById("contactForm")
         .addEventListener("submit", function (event) {
           setTimeout(() => {
             event.target.reset();
+            const textarea = document.querySelector('textarea[name="message"]');
+            if (textarea) textarea.style.height = "auto";
           }, 50);
         });
-      function scrollGallery(galleryId, direction) {
-        const gallery = document.getElementById(galleryId);
-        if (!gallery) return;
-        const scrollAmount = gallery.clientWidth;
 
-        gallery.scrollBy({
-          left: scrollAmount * direction,
-          behavior: "smooth",
-        });
-      }
+      (function () {
+        const scene = document.getElementById("stackScene");
+        const visual = document.getElementById("heroVisual");
+        if (!scene || !visual) return;
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        if (prefersReducedMotion) return;
+        let targetX = 0,
+          targetY = 0,
+          currentX = 0,
+          currentY = 0;
+        function onMove(e) {
+          const rect = visual.getBoundingClientRect();
+          const relX = (e.clientX - rect.left) / rect.width - 0.5;
+          const relY = (e.clientY - rect.top) / rect.height - 0.5;
+          targetY = relX * 22;
+          targetX = -relY * 14;
+        }
+        function reset() {
+          targetX = 0;
+          targetY = 0;
+        }
+        visual.addEventListener("mousemove", onMove);
+        visual.addEventListener("mouseleave", reset);
+        function animate() {
+          currentX += (targetX - currentX) * 0.06;
+          currentY += (targetY - currentY) * 0.06;
+          scene.style.transform = `rotateX(${18 + currentX}deg) rotateY(${-28 + currentY}deg)`;
+          requestAnimationFrame(animate);
+        }
+        animate();
+      })();
     </script>
   </body>
 </html>
- 
