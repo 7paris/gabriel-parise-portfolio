@@ -28,6 +28,26 @@
             <li>
               <button id="lang-switcher" class="lang-button">ENG</button>
             </li>
+            <li>
+              <button
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Cambia tema"
+              >
+                <!-- SVG per la Luna (tema Chiaro attivo) -->
+                <svg class="theme-icon icon-moon" viewBox="0 0 24 24">
+                  <path
+                    d="M12.3 2a10 10 0 0 0 9.7 11.2 10 10 0 1 1-9.7-11.2z"
+                  />
+                </svg>
+                <!-- SVG per il Sole (tema Scuro attivo) -->
+                <svg class="theme-icon icon-sun" viewBox="0 0 24 24">
+                  <path
+                    d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 18a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1zm10-9a1 1 0 0 1-1 1h-2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1zM5 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1zm14.07-6.07a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zM7.76 17.66a1 1 0 0 1 0 1.41l-1.42 1.42a1 1 0 1 1-1.41-1.42l1.41-1.41a1 1 0 0 1 1.42 0zm11.31 11.31a1 1 0 0 1-1.41 0l-1.42-1.41a1 1 0 1 1 1.42-1.42l1.41 1.42a1 1 0 0 1 0 1.41zM7.76 6.34a1 1 0 0 1-1.42 0L4.93 4.93a1 1 0 1 1 1.41-1.41l1.42 1.41a1 1 0 0 1 0 1.41z"
+                  />
+                </svg>
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -43,17 +63,15 @@
             Costruisco sistemi solidi, pronti per l'uso reale.
           </h1>
           <p class="hero-lead" data-lang-key="hero_lead">
-            18 anni, vivo in Italia. Lavoro su tutto lo stack —
+            19 anni, vivo in Italia. Lavoro su tutto lo stack —
             dall'infrastruttura di rete alla logica di backend, fino
             all'interfaccia utente — con l'obiettivo di perfezionare ogni
             livello.
           </p>
           <div class="hero-actions">
-            <!-- Bottone Contattami -->
             <a href="#contact" class="cta-button" data-lang-key="hero_cta"
               >Contattami</a
             >
-            <!-- NUOVO Bottone Scarica CV -->
             <a
               href="Gabriel_Parise_CV.pdf"
               download
@@ -61,7 +79,6 @@
               data-lang-key="hero_cv"
               >Scarica CV</a
             >
-
             <div class="contact-links">
               <a
                 href="https://github.com/7paris"
@@ -73,23 +90,103 @@
           </div>
         </div>
 
-        <div class="hero-visual" id="heroVisual" aria-hidden="true">
+        <!-- STACK 3D SCENE NELL'HERO -->
+        <div class="hero-visual" id="heroVisual">
           <div class="stack-scene" id="stackScene">
+            <!-- Network Layer -->
             <div class="stack-layer layer-network">
-              <span class="layer-label">Network</span>
-              <span class="layer-detail">CISCO · VLAN · Routing</span>
+              <div class="layer-content">
+                <div class="layer-texts">
+                  <span class="layer-label">Network</span>
+                  <span class="layer-detail">CISCO · VLAN · Routing</span>
+                </div>
+                <svg class="layer-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M4 6h16a2 2 0 002-2V3a1 1 0 00-1-1H3a1 1 0 00-1 1v1a2 2 0 002 2zm17 2H3a2 2 0 00-2 2v2a2 2 0 002 2h18a2 2 0 002-2v-2a2 2 0 00-2-2zm0 8H3a2 2 0 00-2 2v2a2 2 0 002 2h18a2 2 0 002-2v-2a2 2 0 00-2-2zM6 4h2v1H6V4zm0 7h2v1H6v-1zm0 7h2v1H6v-1z"
+                  />
+                </svg>
+              </div>
             </div>
+
+            <!-- Database Layer -->
             <div class="stack-layer layer-database">
-              <span class="layer-label">Database</span>
-              <span class="layer-detail">SQL · Schema design</span>
+              <div class="layer-content">
+                <div class="layer-texts">
+                  <span class="layer-label">Database</span>
+                  <span class="layer-detail">SQL · Schema design</span>
+                </div>
+                <svg class="layer-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 3.34 2 5v14c0 1.66 4.48 3 10 3s10-1.34 10-3V5c0-1.66-4.48-3-10-3zm0 2c4.97 0 8 1.07 8 1.5S16.97 7 12 7s-8-1.07-8-1.5S7.03 4 12 4zm8 15c0 .43-3.03 1.5-8 1.5s-8-1.07-8-1.5v-2.18C5.55 17.5 8.57 18 12 18s6.45-.5 8-1.18V19zm0-4.5c0 .43-3.03 1.5-8 1.5s-8-1.07-8-1.5v-2.18C5.55 13 8.57 13.5 12 13.5s6.45-.5 8-1.18V14.5z"
+                  />
+                </svg>
+              </div>
             </div>
+
+            <!-- Backend Layer -->
             <div class="stack-layer layer-backend">
-              <span class="layer-label">Backend</span>
-              <span class="layer-detail">Python · Django</span>
+              <div class="layer-content">
+                <div class="layer-texts">
+                  <span class="layer-label">Backend</span>
+                  <span class="layer-detail">Python · Django</span>
+                </div>
+                <svg class="layer-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"
+                  />
+                </svg>
+              </div>
             </div>
+
+            <!-- Frontend Layer -->
             <div class="stack-layer layer-frontend">
-              <span class="layer-label">Frontend</span>
-              <span class="layer-detail">HTML · CSS · JS</span>
+              <div class="layer-content">
+                <div class="layer-texts">
+                  <span class="layer-label">Frontend</span>
+                  <span class="layer-detail">HTML · CSS · JS</span>
+                </div>
+                <svg class="layer-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8h16v10zM6 5.5a1 1 0 110 2 1 1 0 010-2zm3 0a1 1 0 110 2 1 1 0 010-2zm3 0a1 1 0 110 2 1 1 0 010-2z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TERMINALE INTERATTIVO SEPARATO -->
+    <section id="terminal" class="terminal-section">
+      <div class="container">
+        <h2
+          style="text-align: center; margin-bottom: 24px"
+          data-lang-key="terminal_title"
+        >
+          Terminal Interactive
+        </h2>
+        <div class="terminal-window" id="terminalWindow">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="term-dot term-red"></span>
+              <span class="term-dot term-yellow"></span>
+              <span class="term-dot term-green"></span>
+            </div>
+            <div class="terminal-title">gabriel@dev-portfolio:~</div>
+          </div>
+          <div class="terminal-body" id="termBody">
+            <div class="terminal-history" id="termHistory">
+              <div class="term-output-line" id="termWelcome"></div>
+            </div>
+            <div class="terminal-input-row">
+              <span class="term-prompt">gabriel@portfolio:~$</span>
+              <input
+                type="text"
+                id="termInput"
+                class="terminal-input"
+                autocomplete="off"
+              />
             </div>
           </div>
         </div>
@@ -132,23 +229,23 @@
 
         <aside class="about-facts">
           <div class="fact">
-            <span class="fact-number">18</span>
+            <span class="fact-number" data-target="19">0</span>
             <span class="fact-label" data-lang-key="fact_age">Anni</span>
           </div>
           <div class="fact">
-            <span class="fact-number">7.0</span>
+            <span class="fact-number" data-target="7.0">0.0</span>
             <span class="fact-label" data-lang-key="fact_grade"
               >Media scolastica, materie d'indirizzo</span
             >
           </div>
           <div class="fact">
-            <span class="fact-number">4</span>
+            <span class="fact-number" data-target="4">0</span>
             <span class="fact-label" data-lang-key="fact_languages"
               >Linguaggi — C, C++, Java, Python</span
             >
           </div>
           <div class="fact">
-            <span class="fact-number">2</span>
+            <span class="fact-number" data-target="2">0</span>
             <span class="fact-label" data-lang-key="fact_certs"
               >Certificazioni CISCO</span
             >
@@ -367,9 +464,10 @@
           hero_eyebrow: "DIPLOMATO IN INFORMATICA · ITIS E. FERMI",
           hero_title: "Costruisco sistemi solidi, pronti per l'uso reale.",
           hero_lead:
-            "18 anni, vivo in Italia. Lavoro su tutto lo stack — dall'infrastruttura di rete alla logica di backend, fino all'interfaccia utente — con l'obiettivo di perfezionare ogni livello.",
+            "19 anni, vivo in Italia. Lavoro su tutto lo stack — dall'infrastruttura di rete alla logica di backend, fino all'interfaccia utente — con l'obiettivo di perfezionare ogni livello.",
           hero_cta: "Contattami",
-          hero_cv: "Scarica CV" /* NUOVO */,
+          hero_cv: "Scarica CV",
+          terminal_title: "Terminale Interattivo",
           about_title: "Chi sono",
           about_p1:
             "Sono <strong>Gabriel Parise</strong>, un neodiplomato in Informatica con una profonda passione per la tecnologia e una specializzazione nella risoluzione di problemi complessi. Dalla mia prima riga di codice, sono rimasto affascinato dalla capacità della programmazione di trasformare idee astratte in soluzioni digitali tangibili e funzionali. La mia missione è costruire esperienze utente che siano tanto intuitive quanto efficienti, dedicando la stessa attenzione a un backend robusto e a un'interfaccia elegante.",
@@ -420,6 +518,10 @@
           placeholder_message: "Il tuo messaggio",
           contact_button: "Invia messaggio",
           footer_contact: "Contattami",
+          term_welcome:
+            'Benvenuto nella CLI di Gabriel Parise (v1.0.0). Digita <strong style="color:#00e0c3">help</strong> per visualizzare i comandi disponibili.',
+          term_cmd_not_found:
+            'Comando non trovato: "{cmd}". Digita "help" per visualizzare i comandi disponibili.',
         },
         en: {
           nav_about: "About",
@@ -429,9 +531,10 @@
           hero_eyebrow: "INFORMATICS GRADUATE · ITIS E. FERMI",
           hero_title: "I build systems that hold up under real use.",
           hero_lead:
-            "18 years old, based in Italy. I work across the whole stack — from network infrastructure to backend logic to the interface people actually touch — and I care about getting each layer right.",
+            "19 years old, based in Italy. I work across the whole stack — from network infrastructure to backend logic to the interface people actually touch — and I care about getting each layer right.",
           hero_cta: "Get in touch",
-          hero_cv: "Download CV" /* NUOVO */,
+          hero_cv: "Download CV",
+          terminal_title: "Interactive Terminal",
           about_title: "About",
           about_p1:
             "I'm <strong>Gabriel Parise</strong>, an Informatics graduate deeply passionate about technology and specializing in complex problem-solving. Since my very first line of code, I've been fascinated by code's ability to transform abstract ideas into tangible, functional digital solutions. My mission is to build user experiences that are as intuitive as they are efficient — giving equal attention to a robust backend and an elegant interface.",
@@ -482,21 +585,52 @@
           placeholder_message: "Your message",
           contact_button: "Send message",
           footer_contact: "Contact Me",
+          term_welcome:
+            'Welcome to Gabriel Parise\'s CLI (v1.0.0). Type <strong style="color:#00e0c3">help</strong> to view available commands.',
+          term_cmd_not_found:
+            'Command not found: "{cmd}". Type "help" to view available commands.',
         },
       };
 
+      const terminalCommands = {
+        it: {
+          help: "Comandi disponibili:\n  • about      - Breve introduzione su di me\n  • skills     - Elenco hard & soft skills\n  • contact    - Come metterti in contatto\n  • cv         - Scarica subito il mio CV in PDF\n  • clear      - Pulisce lo schermo del terminale",
+          about:
+            "Gabriel Parise, 19 anni, Italia.\nDiplomato in Informatica con media del 7. Focus su Backend (Python/Django), Networking CISCO e Database SQL.",
+          skills:
+            "Linguaggi: C, C++, Python, Java, SQL, HTML/CSS, JS.\nFrameworks: Django.\nStrumenti: Git/GitHub, Packet Tracer, Linux basics.",
+          contact:
+            "Email: usa il modulo contatti più in basso nel sito!\nGitHub: https://github.com/7paris",
+          cv: "Download in corso del file Gabriel_Parise_CV.pdf...",
+        },
+        en: {
+          help: "Available commands:\n  • about      - Short introduction about me\n  • skills     - Hard & soft skills list\n  • contact    - How to get in touch\n  • cv         - Download my PDF resume now\n  • clear      - Clear terminal screen",
+          about:
+            "Gabriel Parise, 19 years old, Italy.\nInformatics graduate with average grade of 7. Focus on Backend (Python/Django), CISCO Networking and SQL Databases.",
+          skills:
+            "Languages: C, C++, Python, Java, SQL, HTML/CSS, JS.\nFrameworks: Django.\nTools: Git/GitHub, Packet Tracer, Linux basics.",
+          contact:
+            "Email: use the contact form further down the site!\nGitHub: https://github.com/7paris",
+          cv: "Downloading Gabriel_Parise_CV.pdf...",
+        },
+      };
+
+      let currentLang = "it";
+
       document.addEventListener("DOMContentLoaded", () => {
         const langSwitcher = document.getElementById("lang-switcher");
-        let currentLang = "it";
 
         function setLanguage(lang) {
+          currentLang = lang;
           document.documentElement.lang = lang;
           langSwitcher.textContent = lang === "it" ? "ENG" : "ITA";
+
           document.querySelectorAll("[data-lang-key]").forEach((element) => {
             const key = element.getAttribute("data-lang-key");
             if (translations[lang][key])
               element.innerHTML = translations[lang][key];
           });
+
           document
             .querySelectorAll("[data-lang-placeholder]")
             .forEach((element) => {
@@ -504,11 +638,16 @@
               if (translations[lang][key])
                 element.placeholder = translations[lang][key];
             });
+
+          // Aggiorna messaggio di benvenuto nel terminale
+          const termWelcome = document.getElementById("termWelcome");
+          if (termWelcome) {
+            termWelcome.innerHTML = translations[lang].term_welcome;
+          }
         }
 
         langSwitcher.addEventListener("click", () => {
-          currentLang = currentLang === "it" ? "en" : "it";
-          setLanguage(currentLang);
+          setLanguage(currentLang === "it" ? "en" : "it");
         });
 
         setLanguage(currentLang);
@@ -568,6 +707,9 @@
           }, 50);
         });
 
+      /* ==========================================================
+         ANIMAZIONE STACK 3D
+         ========================================================== */
       (function () {
         const scene = document.getElementById("stackScene");
         const visual = document.getElementById("heroVisual");
@@ -582,9 +724,8 @@
           const rect = visual.getBoundingClientRect();
           const relX = (e.clientX - rect.left) / rect.width - 0.5;
           const relY = (e.clientY - rect.top) / rect.height - 0.5;
-          // Escursione aumentata per renderla chiaramente visibile:
-          targetY = relX * 40;
-          targetX = -relY * 26;
+          targetY = relX * 35;
+          targetX = -relY * 25;
         }
 
         function reset() {
@@ -596,7 +737,6 @@
         visual.addEventListener("mouseleave", reset);
 
         function animate() {
-          // Movimento fluido verso la posizione del cursore
           currentX += (targetX - currentX) * 0.08;
           currentY += (targetY - currentY) * 0.08;
           scene.style.transform = `rotateX(${18 + currentX}deg) rotateY(${-28 + currentY}deg)`;
@@ -604,6 +744,142 @@
         }
         animate();
       })();
+
+      /* ==========================================================
+         1. DARK / LIGHT THEME TOGGLE (SVG & Memoria)
+         ========================================================== */
+      const themeBtn = document.getElementById("theme-toggle");
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+
+      if (themeBtn) {
+        themeBtn.addEventListener("click", () => {
+          const isDark =
+            document.documentElement.getAttribute("data-theme") === "dark";
+          if (isDark) {
+            document.documentElement.removeAttribute("data-theme");
+            localStorage.setItem("theme", "light");
+          } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+          }
+        });
+      }
+
+      /* ==========================================================
+         2. FACT COUNTER (Animazione numeri)
+         ========================================================== */
+      const factNumbers = document.querySelectorAll(".fact-number");
+      let countersTriggered = false;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !countersTriggered) {
+              countersTriggered = true;
+              factNumbers.forEach((el) => {
+                const rawTarget = el.getAttribute("data-target");
+                const isDecimal = rawTarget.includes(".");
+                const target = parseFloat(rawTarget);
+                let start = 0;
+                const duration = 1500;
+                const steps = 40;
+                const stepTime = duration / steps;
+                const increment = target / steps;
+
+                const timer = setInterval(() => {
+                  start += increment;
+                  if (start >= target) {
+                    el.textContent = isDecimal
+                      ? target.toFixed(1)
+                      : Math.round(target);
+                    clearInterval(timer);
+                  } else {
+                    el.textContent = isDecimal
+                      ? start.toFixed(1)
+                      : Math.round(start);
+                  }
+                }, stepTime);
+              });
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+
+      const aboutFacts = document.querySelector(".about-facts");
+      if (aboutFacts) observer.observe(aboutFacts);
+
+      /* ==========================================================
+         3. TERMINALE INTERATTIVO (Multilingua)
+         ========================================================== */
+      const termInput = document.getElementById("termInput");
+      const termHistory = document.getElementById("termHistory");
+      const termBody = document.getElementById("termBody");
+
+      if (termInput) {
+        termInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            const command = termInput.value.trim().toLowerCase();
+            if (!command) return;
+
+            const line = document.createElement("div");
+            line.innerHTML = `<span class="term-prompt-line">gabriel@portfolio:~$</span> <span class="term-command">${escapeHtml(command)}</span>`;
+            termHistory.appendChild(line);
+
+            const activeCommands = terminalCommands[currentLang];
+
+            if (command === "clear") {
+              termHistory.innerHTML = "";
+            } else if (command === "cv" || command === "cat cv.txt") {
+              const out = document.createElement("div");
+              out.className = "term-output-line";
+              out.textContent = activeCommands.cv;
+              termHistory.appendChild(out);
+
+              const link = document.createElement("a");
+              link.href = "Gabriel_Parise_CV.pdf";
+              link.download = "Gabriel_Parise_CV.pdf";
+              link.click();
+            } else if (activeCommands[command]) {
+              const out = document.createElement("div");
+              out.className = "term-output-line";
+              out.textContent = activeCommands[command];
+              termHistory.appendChild(out);
+            } else {
+              const out = document.createElement("div");
+              out.className = "term-output-line";
+              out.textContent = translations[
+                currentLang
+              ].term_cmd_not_found.replace("{cmd}", command);
+              termHistory.appendChild(out);
+            }
+
+            termInput.value = "";
+            termBody.scrollTop = termBody.scrollHeight;
+          }
+        });
+
+        document
+          .getElementById("terminalWindow")
+          .addEventListener("click", () => {
+            termInput.focus();
+          });
+      }
+
+      function escapeHtml(text) {
+        const div = document.createElement("div");
+        div.textContent = text;
+        return div.innerHTML;
+      }
     </script>
   </body>
 </html>

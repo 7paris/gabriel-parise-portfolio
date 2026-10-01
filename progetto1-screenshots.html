@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Screenshot: Gestione Ordini</title>
+    <title>Screenshot: Gestione Ordini — Gabriel Parise</title>
     <link rel="icon" type="image/png" href="img/logo.jpeg" sizes="32x32" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -20,26 +22,112 @@
         min-height: 100vh;
         margin: 0;
         padding: 30px 15px;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
       }
+
       .lightbox-content-page {
         background-color: var(--surface);
         padding: 40px;
         border-radius: var(--radius-l);
-        max-width: 1200px;
-        width: 95%;
+        max-width: 1100px;
+        width: 100%;
         text-align: center;
         box-shadow: var(--shadow-card-hover);
         border: 1px solid var(--border);
+        transition:
+          background-color 0.3s ease,
+          border-color 0.3s ease;
       }
+
+      .gallery-header h2 {
+        margin-bottom: 10px;
+      }
+
+      .gallery-header p {
+        color: var(--ink-muted);
+        margin-bottom: 30px;
+        font-size: 0.95em;
+      }
+
       .gallery-container {
         position: relative;
         margin-bottom: 30px;
       }
+
       .screenshot-gallery-modal {
-        height: 500px;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        gap: 20px;
+        height: 520px;
         border: 1px solid var(--border);
         border-radius: var(--radius-m);
+        background-color: var(--bg);
+        padding: 15px;
+        box-sizing: border-box;
+        -webkit-overflow-scrolling: touch;
       }
+
+      /* Nasconde la scrollbar predefinita mantenendo lo scorrimento */
+      .screenshot-gallery-modal::-webkit-scrollbar {
+        height: 8px;
+      }
+      .screenshot-gallery-modal::-webkit-scrollbar-track {
+        background: var(--surface-alt);
+        border-radius: 4px;
+      }
+      .screenshot-gallery-modal::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 4px;
+      }
+
+      .gallery-image-modal {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        scroll-snap-align: center;
+        border-radius: var(--radius-s);
+        background-color: var(--surface);
+      }
+
+      .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(18, 23, 43, 0.75);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        font-size: 1.3em;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background-color 0.2s ease,
+          transform 0.2s ease;
+        z-index: 10;
+      }
+
+      .nav-button:hover {
+        background-color: var(--accent);
+        transform: translateY(-50%) scale(1.08);
+      }
+
+      .nav-button.prev {
+        left: -20px;
+      }
+
+      .nav-button.next {
+        right: -20px;
+      }
+
       .page-actions {
         display: flex;
         justify-content: space-between;
@@ -48,26 +136,47 @@
         flex-wrap: wrap;
         gap: 15px;
       }
+
       @media (max-width: 768px) {
         .lightbox-content-page {
-          padding: 20px;
+          padding: 24px 16px;
         }
+
         .screenshot-gallery-modal {
-          height: 250px;
+          height: 280px;
+          padding: 8px;
         }
+
+        .nav-button {
+          width: 38px;
+          height: 38px;
+          font-size: 1em;
+        }
+
+        .nav-button.prev {
+          left: -10px;
+        }
+
+        .nav-button.next {
+          right: -10px;
+        }
+
         .page-actions {
           justify-content: center;
+          flex-direction: column-reverse;
         }
       }
     </style>
   </head>
   <body>
     <div class="lightbox-content-page">
-      <h2 data-lang-key="title">Screenshot: Gestione Ordini</h2>
-      <p data-lang-key="instructions">
-        Scorri orizzontalmente o usa le frecce per vedere tutti i passaggi
-        dell'applicazione.
-      </p>
+      <div class="gallery-header">
+        <h2 data-lang-key="title">Screenshot: Gestione Ordini</h2>
+        <p data-lang-key="instructions">
+          Scorri orizzontalmente o usa le frecce per vedere tutti i passaggi
+          dell'applicazione.
+        </p>
+      </div>
 
       <div class="gallery-container">
         <div class="screenshot-gallery-modal" id="galleryPage">
@@ -99,12 +208,14 @@
         <button
           class="nav-button prev"
           onclick="scrollGallery('galleryPage', -1)"
+          aria-label="Precedente"
         >
           &#10094;
         </button>
         <button
           class="nav-button next"
           onclick="scrollGallery('galleryPage', 1)"
+          aria-label="Successivo"
         >
           &#10095;
         </button>
@@ -112,13 +223,22 @@
 
       <div class="page-actions">
         <a href="index.html" class="cta-button" data-lang-key="return_button"
-          >Torna al Profilo Digitale</a
+          >← Torna al Profilo Digitale</a
         >
         <button id="lang-switcher" class="lang-button">ENG</button>
       </div>
     </div>
 
     <script>
+      // Sincronizzazione tema Dark/Light memorizzato
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+
       function scrollGallery(galleryId, direction) {
         const gallery = document.getElementById(galleryId);
         if (!gallery) return;
@@ -134,7 +254,7 @@
           title: "Screenshot: Gestione Ordini",
           instructions:
             "Scorri orizzontalmente o usa le frecce per vedere tutti i passaggi dell'applicazione.",
-          return_button: "Torna al Profilo Digitale",
+          return_button: "← Torna al Profilo Digitale",
           alt_dashboard: "Gestione Ordini - Dashboard",
           alt_orders: "Gestione Ordini - Pagina Ordini",
           alt_export: "Gestione Ordini - Form Esportazione",
@@ -143,8 +263,8 @@
         en: {
           title: "Screenshots: Order Management",
           instructions:
-            "Scroll horizontally to see all application steps or use the arrows.",
-          return_button: "Return to Digital Profile",
+            "Scroll horizontally or use the arrows to view all application steps.",
+          return_button: "← Return to Digital Profile",
           alt_dashboard: "Order Management - Dashboard",
           alt_orders: "Order Management - Orders Page",
           alt_export: "Order Management - Export Form",
