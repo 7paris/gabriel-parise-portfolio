@@ -336,13 +336,26 @@ h2 {
   justify-content: center;
 }
 
+@keyframes floatLayers {
+  0%,
+  100% {
+    transform: rotateX(18deg) rotateY(-28deg) translateY(0px);
+  }
+  50% {
+    transform: rotateX(24deg) rotateY(-20deg) translateY(-14px);
+  }
+}
+
 .stack-scene {
   position: relative;
   width: 260px;
   height: 260px;
   transform-style: preserve-3d;
-  transform: rotateX(18deg) rotateY(-28deg);
-  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: floatLayers 5s ease-in-out infinite;
+}
+
+.stack-scene:hover {
+  animation-play-state: paused;
 }
 
 .stack-layer {
