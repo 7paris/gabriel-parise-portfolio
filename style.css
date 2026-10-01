@@ -336,26 +336,13 @@ h2 {
   justify-content: center;
 }
 
-@keyframes floatLayers {
-  0%,
-  100% {
-    transform: rotateX(18deg) rotateY(-28deg) translateY(0px);
-  }
-  50% {
-    transform: rotateX(24deg) rotateY(-20deg) translateY(-14px);
-  }
-}
-
 .stack-scene {
   position: relative;
   width: 260px;
   height: 260px;
   transform-style: preserve-3d;
-  animation: floatLayers 5s ease-in-out infinite;
-}
-
-.stack-scene:hover {
-  animation-play-state: paused;
+  transform: rotateX(18deg) rotateY(-28deg);
+  /* RIMOSSA la transition da qui, perché il movimento fluido a 60fps lo fa già JavaScript */
 }
 
 .stack-layer {
@@ -370,7 +357,7 @@ h2 {
   padding: 0 26px;
   box-shadow: 0 20px 40px -12px rgba(18, 23, 43, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out; /* Questo per l'hover dei layer va benissimo */
 }
 
 .stack-scene:hover .stack-layer {
